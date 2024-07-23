@@ -1,6 +1,6 @@
 # Convolutional-neural-networks-and-vision-transformers-for-Plankton-Classification
 
-ToolPlankton2024_matlab.rar code for training ensemble of CNNs, matlab code, see the README inside that .rar for detail on how to run and modify the functions.
+ToolPlankton2024_matlab.rar code for training ensemble of CNNs, matlab code, see the README inside that .rar for details on how to run and modify the functions.
 
 transformer_ens.zip is the code for training transformers, pytorch code
 
