@@ -11,24 +11,41 @@ patterns in the training and test sets to match the average pixel values of the 
 during training. At each epoch, we record the corresponding loss and, for inference, select the network from the epoch with the lowest recorded loss.
 This approach is necessary due to the instability of convergence. Without this processing, performance would significantly deteriorate"
 you have to add in the code the following lines after reading an image (i.e. the line: IM=NX{DIV(fold,pattern)};), clearly for both training and test sets:
+
 media=mean(IM(:));
+
 sposto=AVG_TR-media;%AVG_TR is the average value of the training images, you have to pre-calculate it
+
 IM=IM+sposto;
+
 
 for selecting  the network from the epoch with the lowest recorded loss, you can modify in the following way:
 
+
 rec=inf;
+
 for epoch = 1:numEpochs
+
 ...
+
    for i = 1:numIterationsPerEpoch
+   
        ...
+       
         valoreLoss(i)=loss;
+        
    end
+   
    if mean(valoreLoss)<rec
+   
       rec=mean(valoreLoss)
+      
       dLfin=dlnet;
+      
    end
+
 end
+
 %the you use dLfin for classifyng test data
    
 for combining scores of CNNs and transformers ensemble, remember to normalize the scores (separately) by the number of classifiers that belong to each ensemble, before the weighted sum rule, therefore: 
