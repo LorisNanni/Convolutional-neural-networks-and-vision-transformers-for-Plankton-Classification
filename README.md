@@ -54,6 +54,11 @@ end
 
 %the you use dLfin for classifyng test data
 
+
+---------------------------------------
+
+
+
    
 for combining scores of CNNs and transformers ensemble, remember to normalize the scores (separately) by the number of classifiers that belong to each ensemble, before the weighted sum rule, therefore: 
 a) sum rule among the CNNs, divide that score by the number of CNNs that belong to the ensemble of CNNs;
