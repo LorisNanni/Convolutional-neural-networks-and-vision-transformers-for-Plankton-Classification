@@ -17,6 +17,9 @@ media=mean(IM(:));
 sposto=AVG_TR-media;%AVG_TR is the average value of the training images, you have to pre-calculate it
 
 IM=IM+sposto;
+---------------------------------------
+
+
 
 
 
